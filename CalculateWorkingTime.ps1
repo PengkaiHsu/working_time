@@ -72,7 +72,7 @@ function PrintWorkingTime([System.Collections.Generic.Dictionary[String, Int]]$W
         $timePercentage = $timePercentage * 100
 
         # あるチャージ項目、その総工数、占める割合をプリント
-        Write-Host "$key : $value 分 : $timePercentage %"
+        Write-Host "$key : $value min : $timePercentage %"
     }
 
     Write-Host `n"Total time = " $totalTime
