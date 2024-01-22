@@ -1,6 +1,56 @@
-# working_time
+# Working Time Summary
 
 Convert the working time timetable to percentages and calculate the total time for each project in a single day.
 
-- Input File: input_sample.md
+- Input File Sample: input_sample.md
 - Sorce Code: CalculateWorkingTime.ps1
+
+## How to use it
+1. Please open the source code file using the PowerShell ISE.
+2. Update the path for $file_data.
+3. Execute 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process' in the command line.
+4. Execute the code with the run button.  
+
+## Input 
+### 1. Format
+```
+## {yyyy/mm/dd}
+
+- {HHmm} ~ {HHmm}: {Work Title1} - {Work Detail1}
+- {HHmm} ~ {HHmm}: {Work Title2} - {Work Detail2}
+- {HHmm} ~ {HHmm}: {Work Title3} - {Work Detail3}
+```
+### 2. Sample
+```
+## 2023/5/18
+
+- 0900 ~ 0930: 雑務 - パソコン起動、Todo 確認
+- 0930 ~ 1000: 部門会議 - チーム定例
+- 1000 ~ 1030: A project - Jira 登録、ブランチ整理等
+- 1030 ~ 1100: A project - 開発定例
+- 1100 ~ 1200: B project - 結果画面実装
+- 1200 ~ 1300: 昼休憩
+- 1300 ~ 1700: B project - 結果画面実装、画面設計
+- 1700 ~ 1730: C project - Aさんと会議
+- 1730 ~ 1800: 雑務 - メール確認、member chat
+```
+## Output
+### Sample
+```
+【① Work title and it's total time】
+雑務 : 60 分 : 12.5 %
+部門会議 : 30 分 : 6.25 %
+A project : 60 分 : 12.5 %
+B project : 300 分 : 62.5 %
+C project : 30 分 : 6.25 %
+
+Total time =  480
+[for double check]Total percentage =  1
+
+【② Work title and it's detail】
+雑務: パソコン起動、Todo 確認、メール確認、member chat
+部門会議: チーム定例
+A project: Jira 登録、ブランチ整理等、開発定例
+B project: 結果画面実装
+C project: Aさんと会議
+```
