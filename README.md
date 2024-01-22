@@ -38,11 +38,11 @@ Convert the working time timetable to percentages and calculate the total time f
 ### Sample
 ```
 【① Work title and it's total time】
-雑務 : 60 分 : 12.5 %
-部門会議 : 30 分 : 6.25 %
-A project : 60 分 : 12.5 %
-B project : 300 分 : 62.5 %
-C project : 30 分 : 6.25 %
+雑務 : 60 min : 12.5 %
+部門会議 : 30 min : 6.25 %
+A project : 60 min : 12.5 %
+B project : 300 min : 62.5 %
+C project : 30 min : 6.25 %
 
 Total time =  480
 [for double check]Total percentage =  1
