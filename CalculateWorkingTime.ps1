@@ -61,7 +61,7 @@ function GetWorkNameAndDetailThisRow([string]$TimeRow) {
 # チャージ項目とその工数をプリントするための関数。
 function PrintWorkingTime([System.Collections.Generic.Dictionary[String, Int]]$Works) {
     
-    Write-Host "【① チャージ項目と工数】"
+    Write-Host "【① Work title and it's total time】"
 
     $totalPercentage = 0
     foreach($key in $Works.Keys)
@@ -82,7 +82,7 @@ function PrintWorkingTime([System.Collections.Generic.Dictionary[String, Int]]$W
 # チャージ項目とその詳細をプリントするための関数。
 function PrintWorkingDetail([System.Collections.Generic.Dictionary[String, String]]$WorksDetail) {
     
-    Write-Host "【② チャージ項目と詳細】"
+    Write-Host "【② Work title and it's detail】"
 
     foreach($key in $WorksDetail.Keys)
     {
