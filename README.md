@@ -56,3 +56,4 @@ A project: Jira 登録、ブランチ整理等、開発定例
 B project: 結果画面実装
 C project: Aさんと会議
 ```
+Caution: Work titles containing "休憩," which means break, will not be considered as part of work hours.
