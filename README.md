@@ -6,10 +6,12 @@ Convert the working time timetable to percentages and calculate the total time f
 - Sorce Code: CalculateWorkingTime.ps1
 
 ## How to use it
-1. Please open the source code file using the PowerShell ISE.
-2. Update the path for $file_data.
-3. Execute 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process' in the command line.
-4. Execute the code with the run button.  
+1. Open the source code file using the PowerShell ISE or some other IDEs.
+   If you are using macOS, please check https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.4
+   
+3. Update the path for $file_data.
+4. Execute 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process' in the command line.
+5. Execute the whole code.
 
 ## Input 
 ### 1. Format
