@@ -6,6 +6,14 @@
 # chcp 932
 # chcp 65001
 
+# file input
+param([string]$filePath = $args[0])
+if (-not $filePath) {
+    Write-Host "Please drag and drop a file onto this script."
+    exit
+}
+$file_data = Get-Content -Encoding UTF8 $filePath
+
 
 ### 関数定義 ###############################################################################
 
@@ -116,9 +124,6 @@ function PrintWorkingDetail([Object[]]$groupedWorksInfo) {
 
 ### 以下はメイン処理 ###############################################################################
 
-
-# file input
-$file_data = Get-Content -Encoding UTF8 C:\Programming\PowerShell\WorkingTime\working_time\input_sample.md
 
 # 作業の情報を格納するリスト（チャージ項目名、時間、詳細説明。例えば A project, 60 min, 開発定例）
 $WorksInfo = @()
