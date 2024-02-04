@@ -4,16 +4,25 @@ Convert the working time timetable to percentages and calculate the total time f
 
 - Input File Sample: input_sample.md
 - Sorce Code: CalculateWorkingTime.ps1
+- Batch file for drag-and-drop execution: RunScript.bat
 
 ## How to use it
-1. Open the source code file using the PowerShell ISE or some other IDEs.
+1. Write your work schedule to an .md file (referring to the input_sample.md for guidance).
+
+#### Using the .bat file
+
+2. Drag your .md file onto the RunScript.bat.
+
+#### Executing the PowerShell directly
+
+2. Open the source code file (CalculateWorkingTime.ps1) using the PowerShell ISE or some other IDEs.
    If you are using macOS, please check https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-macos?view=powershell-7.4
    
 3. Update the path for $file_data.
 4. Execute 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process' in the command line.
 5. Execute the whole code.
 
-## Input 
+## Input file
 ### 1. Format
 ```
 ## {yyyy/mm/dd}
@@ -36,7 +45,7 @@ Convert the working time timetable to percentages and calculate the total time f
 - 1700 ~ 1730: C project - Aさんと会議
 - 1730 ~ 1800: 雑務 - メール確認、member chat
 ```
-## Output
+## Console output
 ### Sample
 ```
 【1. Work title and it's total time】
