@@ -105,7 +105,11 @@ function PrintWorkingDetail([Object[]]$groupedWorksInfo) {
         }
         
         # あるチャージ項目の詳細をプリント（ex. xx project: タスク登録、ブランチ整理）
-        Write-Host "$($_.Name) : $workDetail"
+        if ($workDetail -ne ""){
+            Write-Host "$($_.Name) : $workDetail"
+        } else {
+            Write-Host "$($_.Name)"
+        }        
     }
 }
 
