@@ -1,5 +1,5 @@
 ﻿
-# 工数を集計するためのロジック
+# 工数を集計するためのロジック。
 
 ## If there are issues related to the execution policy and character code, please try the following ##
 # Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
@@ -31,7 +31,7 @@ function PrintDate([string]$DateRow) {
 # 渡された作業の行の時間の長さを計算するための関数。
 function GetTimeLengthThisRow([string]$TimeRow) {
 
-    $timeSlot = $TimeRow.Substring(2, 11) # 時間帯を取得
+    $timeSlot = $TimeRow.Substring(2, 11) # 時間帯を取得。
     $timeStart = ($timeSlot.Split([string[]] " ~ ", 'None'))[0]
     $timeEnd = ($timeSlot.Split([string[]] " ~ ", 'None'))[1]
     $dateTimeStart = [DateTime]::ParseExact($timeStart,"HHmm", $null)
@@ -71,7 +71,7 @@ function PrintWorkingTime([Object[]]$groupedWorksInfo) {
     
     Write-Host "【1. Work title and it's total time】"
 
-    # あるチャージ項目、その総工数、占める割合を計算する
+    # あるチャージ項目、その総工数、占める割合を計算する。
     $totalPercentage = 0
     $groupedWorksInfo | ForEach-Object {
 
@@ -86,11 +86,11 @@ function PrintWorkingTime([Object[]]$groupedWorksInfo) {
         $timePercentage = $timePercentage * 100
         $totalPercentage += $timePercentage
         
-        # あるチャージ項目、その総工数、占める割合をプリント
+        # あるチャージ項目、その総工数、占める割合をプリント。
         Write-Host "$($_.Name) : $time min : $timePercentage %"
     }
 
-    # 全体工数をプリント
+    # 全体工数をプリント。
     Write-Host `n"Total time = " $totalTime
     Write-Host "[for double check]Total percentage = " $totalPercentage`n
 }
@@ -112,7 +112,7 @@ function PrintWorkingDetail([Object[]]$groupedWorksInfo) {
             }
         }
         
-        # あるチャージ項目の詳細をプリント（ex. xx project: タスク登録、ブランチ整理）
+        # あるチャージ項目の詳細をプリント（ex. xx project: タスク登録、ブランチ整理）。
         if ($workDetail -ne ""){
             Write-Host "$($_.Name) : $workDetail"
         } else {
@@ -144,7 +144,7 @@ foreach ($row in $file_data)
     # この行の工数を総工数に足す。
     $totalTime = $totalTime + $timeLength.TotalMinutes
 
-    # この行のチャージ項目名と詳細をGet（ex. A project, 開発定例）
+    # この行のチャージ項目名と詳細をGet（ex. A project, 開発定例）。
     $workNameAndDetail = GetWorkNameAndDetailThisRow -TimeRow $row
 
     # この行のチャージ項目名、時間、詳細説明をタプルとしてリストへ格納。
